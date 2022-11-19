@@ -1,0 +1,203 @@
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  visibility: all;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  min-height: 581px;
+  background-color: var(--white-color);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+  transition: transform 450ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 40px;
+  .backdrop.is-hidden & {
+    transform: translate(-50%, -50%) scale(0) rotate(540deg);
+  }
+
+  @media screen and (max-width: 479px) {
+    width: 90%;
+    padding: 20px;
+  }
+
+  @include mobile {
+    width: 450px;
+  }
+
+  @include desktop {
+    width: 528px;
+  }
+}
+
+.modal-close-button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: var(--activecolor);
+    border-color: var(--activecolor);
+  }
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: transparent;
+  padding: 12px 12px 12px 42px;
+  color: var(--primary-color);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--main-text-color);
+  &:hover,
+  &:focus {
+    border: 1px solid var(--activecolor);
+  }
+  &:hover + svg,
+  &:focus + svg {
+    fill: var(--activecolor);
+  }
+}
+
+.modal-label {
+  font-size: 12px;
+  line-height: 1.16;
+  color: var(--primary-color);
+  letter-spacing: 0.01em;
+}
+
+.input-field {
+  margin-bottom: 10px;
+}
+
+.modal-field {
+  margin-top: 20px;
+}
+
+.input-wrap {
+  position: relative;
+  color: #000;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-text {
+  display: block;
+  width: 100%;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: transparent;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  color: var(--main-text-color);
+  padding: 10px;
+  resize: none;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    border: 1px solid var(--activecolor);
+  }
+  &::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.check-text {
+  font-size: 10px;
+  color: var(--main-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mobile {
+    font-size: 12px;
+  }
+  @include desktop {
+    font-size: 14px;
+  }
+  & span {
+    width: 16px;
+    height: 15px;
+    background: var(--white-color);
+    border: 2px solid #000000;
+    border-radius: 2px;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .input-check:checked + & span {
+    background-color: var(--activecolor);
+    border: transparent;
+    fill: var(--white-color);
+  }
+}
+
+.modal-send-button {
+  display: block;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--white-color);
+  background-color: var(--activecolor);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  margin: 30px auto 0 auto;
+  padding: 10px 32px;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+  }
+}
+
+.modal-link {
+  display: inline-block;
+  color: var(--activecolor);
+  margin-left: 2px;
+  text-decoration-line: underline;
+}

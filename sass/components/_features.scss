@@ -1,0 +1,45 @@
+.feature__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feature__item {
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: 767px) {
+    max-width: 450px;
+  }
+
+  @include tablet {
+    width: calc((100% - 30px) / 2);
+    &:nth-child(odd) {
+      margin-right: 30px;
+    }
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include desktop {
+    width: 270px;
+    margin-bottom: 0;
+    &:not(:last-child) {
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.feature__box {
+  background-color: #f5f4fa;
+  // width: 270px;
+  max-width: 450px;
+  height: 120px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}

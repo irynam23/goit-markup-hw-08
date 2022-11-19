@@ -1,0 +1,61 @@
+.main__title {
+  margin: 0 auto 30px auto;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white-color);
+
+  font-size: 26px;
+  line-height: 1.62;
+
+  @include mobile {
+    width: 360px;
+  }
+
+  @include desktop {
+    font-size: 44px;
+    line-height: 1.36;
+    width: 696px;
+  }
+}
+
+.secondary-title {
+  line-height: 1.17;
+  text-align: center;
+  color: var(--main-text-color);
+  margin-bottom: 50px;
+  font-size: 28px;
+
+  @include desktop {
+    font-size: 36px;
+  }
+}
+
+.feature__title {
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--main-text-color);
+  margin-bottom: 10px;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--main-text-color);
+}
+
+.portfolio__title {
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--main-text-color);
+  margin-bottom: 4px;
+}
