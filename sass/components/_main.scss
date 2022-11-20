@@ -7,33 +7,60 @@
   padding: 118px 0;
   background-size: cover;
   // mobile screen
-  background-image: url(../images/bg-img_sm@1x.jpg);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/bg-img_sm@1x.jpg);
 
+  @include desktop {
+    padding: 200px 0;
+  }
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: url(../images/bg-img_sm@2x.jpg);
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/bg-img_sm@2x.jpg);
   }
 
   // tablet screen
   @media screen and (min-width: 481px) {
-    background-image: url(../images/bg-img_md@1x.jpg);
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/bg-img_md@1x.jpg);
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: url(../images/bg-img_md@2x.jpg);
+      background-image: linear-gradient(
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url(../images/bg-img_md@2x.jpg);
     }
   }
 
   // desktop screen
   @media screen and (min-width: 769px) {
-    background-image: url(../images/bg-img_lg@1x.jpg);
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/bg-img_lg@1x.jpg);
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: url(../images/bg-img_lg@2x.jpg);
+      background-image: linear-gradient(
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url(../images/bg-img_lg@2x.jpg);
     }
   }
 }

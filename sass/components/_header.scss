@@ -1,5 +1,9 @@
 .header {
   border-bottom: 1px solid #ececec;
+
+  @media screen and (max-width: 767px) {
+    padding: 10px 0;
+  }
 }
 
 .header__container {
@@ -68,6 +72,7 @@
 }
 
 .header-contacts__link {
+  font-size: 12px;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -84,6 +89,10 @@
   @media screen and (max-width: 767px) {
     display: none;
   }
+
+  @include desktop {
+    font-size: 14px;
+  }
 }
 
 .header-contacts {
@@ -92,8 +101,29 @@
   & li + li {
     margin-top: 10px;
   }
+
+  & .icon-mail {
+    height: 10px;
+    width: 14px;
+  }
+
+  & .icon-phone {
+    height: 14px;
+    width: 10px;
+  }
+
   @include desktop {
     display: flex;
+
+    & .icon-mail {
+      height: 12px;
+      width: 16px;
+    }
+
+    & .icon-phone {
+      height: 16px;
+      width: 10px;
+    }
 
     & li + li {
       margin-top: 0;

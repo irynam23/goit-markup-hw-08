@@ -86,31 +86,36 @@ body {
   background-repeat: no-repeat;
   padding: 118px 0;
   background-size: cover;
-  background-image: url(../images/bg-img_sm@1x.jpg);
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/bg-img_sm@1x.jpg);
+}
+@media screen and (min-width: 1200px) {
+  .main {
+    padding: 200px 0;
+  }
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .main {
-    background-image: url(../images/bg-img_sm@2x.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/bg-img_sm@2x.jpg);
   }
 }
 @media screen and (min-width: 481px) {
   .main {
-    background-image: url(../images/bg-img_md@1x.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/bg-img_md@1x.jpg);
   }
 }
 @media screen and (min-width: 481px) and (min-device-pixel-ratio: 2), screen and (min-width: 481px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 481px) and (min-resolution: 192dpi), screen and (min-width: 481px) and (min-resolution: 2dppx) {
   .main {
-    background-image: url(../images/bg-img_md@2x.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/bg-img_md@2x.jpg);
   }
 }
 @media screen and (min-width: 769px) {
   .main {
-    background-image: url(../images/bg-img_lg@1x.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/bg-img_lg@1x.jpg);
   }
 }
 @media screen and (min-width: 769px) and (min-device-pixel-ratio: 2), screen and (min-width: 769px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 769px) and (min-resolution: 192dpi), screen and (min-width: 769px) and (min-resolution: 2dppx) {
   .main {
-    background-image: url(../images/bg-img_lg@2x.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/bg-img_lg@2x.jpg);
   }
 }
 
@@ -128,6 +133,10 @@ body {
   }
 }
 
+.footer-info {
+  margin-bottom: 60px;
+}
+
 .footer__logo {
   color: var(--white-color);
 }
@@ -142,7 +151,6 @@ body {
 @media screen and (max-width: 767px) {
   .footer-contacts {
     text-align: center;
-    margin-bottom: 60px;
   }
 }
 .footer-contacts li:not(:last-child) {
@@ -175,12 +183,17 @@ body {
   .footer-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
   }
 }
 @media screen and (min-width: 1200px) {
   .footer-container {
-    flex-wrap: nowrap;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .footer-container {
+    text-align: center;
   }
 }
 
@@ -189,7 +202,7 @@ body {
     text-align: center;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .join-us {
     margin-left: 70px;
   }
@@ -225,8 +238,10 @@ body {
   color: var(--white-color);
 }
 
-.subscribe {
-  margin-top: 60px;
+@media screen and (max-width: 767px) {
+  .subscribe {
+    margin-top: 60px;
+  }
 }
 @media screen and (max-width: 1199px) {
   .subscribe {
@@ -237,7 +252,7 @@ body {
 @media screen and (min-width: 1200px) {
   .subscribe {
     margin-top: 0;
-    margin-left: 93px;
+    margin-left: auto;
   }
 }
 .subscribe p {
@@ -326,6 +341,11 @@ body {
 .header {
   border-bottom: 1px solid #ececec;
 }
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 10px 0;
+  }
+}
 
 .header__container {
   display: flex;
@@ -391,6 +411,7 @@ body {
 }
 
 .header-contacts__link {
+  font-size: 12px;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -408,6 +429,11 @@ body {
     display: none;
   }
 }
+@media screen and (min-width: 1200px) {
+  .header-contacts__link {
+    font-size: 14px;
+  }
+}
 
 .header-contacts {
   margin-left: auto;
@@ -415,9 +441,25 @@ body {
 .header-contacts li + li {
   margin-top: 10px;
 }
+.header-contacts .icon-mail {
+  height: 10px;
+  width: 14px;
+}
+.header-contacts .icon-phone {
+  height: 14px;
+  width: 10px;
+}
 @media screen and (min-width: 1200px) {
   .header-contacts {
     display: flex;
+  }
+  .header-contacts .icon-mail {
+    height: 12px;
+    width: 16px;
+  }
+  .header-contacts .icon-phone {
+    height: 16px;
+    width: 10px;
   }
   .header-contacts li + li {
     margin-top: 0;
@@ -1130,6 +1172,9 @@ body {
   font-size: 40px;
   line-height: 1.17;
   letter-spacing: 0.02em;
+}
+.mobile-menu .link.current {
+  color: var(--activecolor);
 }
 .mobile-menu .link:hover, .mobile-menu .link:focus {
   color: var(--activecolor);

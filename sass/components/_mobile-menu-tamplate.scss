@@ -104,6 +104,10 @@
   line-height: 1.17;
   letter-spacing: 0.02em;
 
+  &.current {
+    color: var(--activecolor);
+  }
+
   &:hover,
   &:focus {
     color: var(--activecolor);
